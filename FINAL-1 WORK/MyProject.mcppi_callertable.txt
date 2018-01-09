@@ -1,0 +1,21 @@
+main
+	Init_Main
+		Soft_I2C_Init
+	Read_Time
+		Soft_I2C_Start
+			Delay_1us
+			PutZerosToLATSda
+			PutZerosToLATScl
+		Soft_I2C_Write
+			Delay_1us
+			PutZerosToLATScl
+			PutZerosToLATSda
+		Soft_I2C_Read
+			Delay_1us
+			PutZerosToLATScl
+			PutZerosToLATSda
+		Soft_I2C_Stop
+			PutZerosToLATSda
+			Delay_1us
+	Transform_Time
+		Mul_8x8_U
